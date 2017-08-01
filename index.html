@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>WFM</title>
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/demo.css">
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro|Muli|Droid+Sans+Mono|Istok+Web' rel='stylesheet' type='text/css'>
+    <link id="favicon" rel="shortcut icon" href="assets/images/psiogLogo.png">
+</head>
+
+<body>
+    <div id="container">
+        <h1>
+            <a href="/">WFM</a> <span class="small"></span>
+        </h1>
+
+        <div class="description">
+            A simple app to aggregate feedback
+            <hr>
+        </div>
+
+
+        <ul style='list-style-type: none;' id="demo-container">
+            <li>
+                <label>
+                    <span class="form-label">Upload a zip file</span>
+                    <input type="file" accept="application/zip" id="file-input">
+                </label>
+            </li>
+            <li style="display : none">
+                <label>
+					<span class="form-label">choose temporary storage</span>
+					<select id="creation-method-input">
+						<option value="Blob">RAM</option>
+						<option value="File">HDD</option>
+					</select>
+				</label>
+            </li>
+            <li>
+                <span class="form-label">Feedback on : </span><span><strong id="participantName"></strong></span>
+                <ul style="display: none" id="file-list">
+                </ul>
+                <div id="content"></div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="assets/lib/zip/zip.js"></script>
+    <script type="text/javascript" src="assets/lib/zip/zip-ext.js"></script>
+    <script type="text/javascript" src="assets/lib/zip/z-worker.js"></script>
+    <script type="text/javascript" src="assets/lib/zip/deflate.js"></script>
+    <script type="text/javascript" src="assets/lib/zip/inflate.js"></script>
+    <script type="text/javascript" src="js/demo2.js"></script>    
+    <script>
+        zip.useWebWorkers = false;
+    </script>
+</body>
+</html>
